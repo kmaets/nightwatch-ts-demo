@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Nightwatch Debug",
+            "program": "${workspaceRoot}/node_modules/nightwatch/bin/runner.js",
+            "stopOnEntry": false,
+            "args": [
+                "-e",
+                "chrome",
+                "-c",
+                "./build/nightwatch.conf.js",
+                "-t",
+                "./build/e2e/google.e2e.js"
+            ],
+            "runtimeExecutable": null,
+            "sourceMaps": true
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Nightwatch Chrome Test",
+            "program": "${workspaceRoot}/node_modules/nightwatch/bin/runner.js",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "-e",
+                "chrome",
+                "-c",
+                "./tests/nightwatch.conf.ts",
+                "-t",
+                "build/e2e/google.e2e.ts"
+            ],
+            "runtimeExecutable": null,
+            "sourceMaps": true
+        },
+        // {
+        //     "type": "node",
+        //     "request": "attach",
+        //     "name": "Attach to Process",
+        //     "port": 5858
+        // },
+    ]
+}

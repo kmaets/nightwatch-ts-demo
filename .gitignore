@@ -1,6 +1,10 @@
 
+_OLD
 tests_output
 debug.log
 node_modules
+build
 chromedriver.log
 geckodriver.log
+selenium-server.log
+OLD*

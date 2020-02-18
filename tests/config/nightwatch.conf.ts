@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
 
 module.exports = {
-    src_folders: ['./build/e2e'],
+    src_folders: ['./build/Suites'],
     // src_folders: ['./tests/e2e'],
 
     webdriver: {
@@ -95,5 +95,12 @@ module.exports = {
                 browserName: 'internet explorer'
             }
         }
-    }
+    },
+    // test_runner: {
+    //     type: 'mocha',
+    //     options: {
+    //         ui: 'bdd',
+    //         reporter: 'list'
+    //     }
+    // },
 }

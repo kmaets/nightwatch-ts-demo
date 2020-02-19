@@ -15,9 +15,9 @@
                 "-e",
                 "chrome",
                 "-c",
-                "./build/nightwatch.conf.js",
+                "./build/config/nightwatch.conf.js",
                 "-t",
-                "./build/Suites/MemorialPage.e2e.js"
+                "./build/Suites/Search.e2e.js"
             ],
             "runtimeExecutable": null,
             "console": "integratedTerminal",
@@ -39,7 +39,7 @@
                 "-c",
                 "./tests/nightwatch.conf.ts",
                 "-t",
-                "./build/e2e/MemorialPage.e2e.ts"
+                "./build/e2e/Page.e2e.ts"
             ],
             "console": "integratedTerminal",
             "protocol": "inspector",

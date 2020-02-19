@@ -1,7 +1,7 @@
 {
-    "name": "memcare-e2e",
+    "name": "nightwatch_typescript",
     "version": "1.0.0",
-    "description": "Memcare e2e testing",
+    "description": "Nightwatch typescript testing",
     "main": "index.js",
     "scripts": {
         "start": "ts-node -r ts-node/register ./tests/e2e/google.e2e.ts",
@@ -13,7 +13,7 @@
         "test-edge": "nightwatch -e edge -c ./build/config/nightwatch.conf.js",
         "test-ie": "nightwatch -e ie -c ./build/config/nightwatch.conf.js",
         "test-all": "nightwatch -e chrome,firefox,edge18 -c ./build/config/nightwatch.conf.js",
-        "test-single-test": "nightwatch -e chrome -c ./build/config/nightwatch.conf.js -t ./build/config/e2e/MemorialPage.e2e.js --testcase \"Test 2\"",
+        "test-single-test": "nightwatch -e chrome -c ./build/config/nightwatch.conf.js -t ./build/config/e2e/Search.e2e.js --testcase \"Search test2\"",
         "test-single-group": "nightwatch -e chrome -c ./build/config/nightwatch.conf.js -g ./build/config/e2e",
         "test-mocha": "nightwatch -e chrome -c ./build/config/nightwatch.conf.js -t ./build/config/e2e/mocha.e2e.js"
     },

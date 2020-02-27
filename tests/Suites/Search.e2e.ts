@@ -3,6 +3,16 @@ import { SearchScene } from '../Scenes/SearchScene'
 
 module.exports = {
 
+    beforeEach: async (browser: NightwatchBrowser): Promise<void> => {
+        console.log('Setting up...');
+        await browser.maximizeWindow();
+    },
+
+    afterEach: async (browser: NightwatchBrowser): Promise<void> => {
+        console.log('Closing down...');
+        await browser.end();
+    },
+
     'Search test': async (browser: NightwatchBrowser): Promise<void> => {
 
         const searchScene = new SearchScene(browser);
@@ -20,6 +30,7 @@ module.exports = {
         // console.log('Value', await searchScene.getTypedText());
         console.log('Value', text);
 
-        await browser.end();
+        await browser.pause(2000); 
+        // await browser.end();
     }
 };

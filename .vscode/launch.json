@@ -8,42 +8,19 @@
             "type": "node",
             "request": "launch",
             "name": "Nightwatch Debug",
-            "program": "${workspaceRoot}/node_modules/nightwatch/bin/runner.js",
-            "preLaunchTask": "npm: build",
+            "program": "${workspaceRoot}/node_modules/nightwatch/bin/nightwatch",
             "stopOnEntry": false,
             "args": [
                 "-e",
                 "chrome",
                 "-c",
-                "./build/config/nightwatch.conf.js",
+                "./nightwatch/nightwatch.conf.ts",
                 "-t",
-                "./build/Suites/Search.e2e.js"
+                "./tests/Suites/Search.e2e.ts"
             ],
             "runtimeExecutable": null,
             "console": "integratedTerminal",
             "sourceMaps": true
         },
-        /* {
-            "type": "node",
-            "request": "launch",
-            "name": "Nightwatch Chrome Test",
-            "program": "${workspaceRoot}/node_modules/nightwatch/bin/runner.js",
-            "runtimeArgs": [
-                "--nolazy",
-                "-r",
-                "ts-node/register",
-            ],
-            "args": [
-                "-e",
-                "chrome",
-                "-c",
-                "./tests/nightwatch.conf.ts",
-                "-t",
-                "./build/e2e/Page.e2e.ts"
-            ],
-            "console": "integratedTerminal",
-            "protocol": "inspector",
-            "sourceMaps": true,
-        } */
     ]
 }

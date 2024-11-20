@@ -1,34 +1,27 @@
 {
     "name": "nightwatch_typescript",
     "version": "1.0.0",
-    "description": "Nightwatch typescript testing",
+    "description": "Nightwatch typescript testing with ts-node",
     "main": "index.js",
     "scripts": {
-        "start": "ts-node -r ts-node/register ./tests/e2e/google.e2e.ts",
-        "build": "tsc",
-        "build-test": "tsc && npm run test-single-group",
-        "test-chrome": "tsc && nightwatch -e chrome -c ./build/config/nightwatch.conf.js",
-        "test-firefox": "nightwatch -e firefox -c ./build/config/nightwatch.conf.js",
-        "test-edge18": "nightwatch -e edge18 -c ./build/config/nightwatch.conf.js",
-        "test-edge": "nightwatch -e edge -c ./build/config/nightwatch.conf.js",
-        "test-ie": "nightwatch -e ie -c ./build/config/nightwatch.conf.js",
-        "test-all": "nightwatch -e chrome,firefox,edge18 -c ./build/config/nightwatch.conf.js",
-        "test-single-test": "tsc && nightwatch -e chrome -c ./build/config/nightwatch.conf.js -t ./build/config/e2e/Search.e2e.js --testcase \"Search test\"",
-        "test-single-group": "nightwatch -e chrome -c ./build/config/nightwatch.conf.js -g ./build/config/e2e",
-        "test-mocha": "nightwatch -e chrome -c ./build/config/nightwatch.conf.js -t ./build/config/e2e/mocha.e2e.js"
+        "test-all": "nightwatch -e chrome,firefox,edge -c ./nightwatch/nightwatch.conf.ts ./tests/Suites/**.e2e.ts",
+        "test-chrome": "nightwatch -e chrome -c ./nightwatch/nightwatch.conf.ts ./tests/Suites/**.e2e.ts",
+        "test-firefox": "nightwatch -e firefox -c ./nightwatch/nightwatch.conf.ts ./tests/Suites/**.e2e.ts",
+        "test-edge": "nightwatch -e edge -c ./nightwatch/nightwatch.conf.ts ./tests/Suites/**.e2e.ts"
     },
-    "author": "",
+    "author": "kmaets",
     "license": "ISC",
     "devDependencies": {
-        "@types/nightwatch": "^1.1.3",
-        "@typescript-eslint/eslint-plugin": "^2.19.0",
-        "@typescript-eslint/parser": "^2.19.0",
-        "chromedriver": "^80.0.1",
-        "eslint": "^6.8.0",
-        "geckodriver": "^1.19.1",
-        "iedriver": "^3.14.1",
-        "nightwatch": "^1.3.4",
-        "selenium-server": "^3.141.59",
-        "typescript": "^3.7.5"
+        "@stylistic/eslint-plugin": "^2.11.0",
+        "@types/chromedriver": "^81.0.5",
+        "@types/nightwatch": "^2.3.32",
+        "@typescript-eslint/eslint-plugin": "^8.15.0",
+        "@typescript-eslint/parser": "^8.15.0",
+        "chromedriver": "^131.0.1",
+        "eslint": "^9.15.0",
+        "mochawesome": "^7.1.3",
+        "nightwatch": "^3.9.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.3"
     }
 }

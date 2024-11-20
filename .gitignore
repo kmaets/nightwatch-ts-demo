@@ -8,3 +8,4 @@ chromedriver.log
 geckodriver.log
 selenium-server.log
 OLD*
+msedgedriver.exe

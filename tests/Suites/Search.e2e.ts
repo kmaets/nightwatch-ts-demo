@@ -1,36 +1,26 @@
-import { NightwatchBrowser } from 'nightwatch';
-import { SearchScene } from '../Scenes/SearchScene'
+import { SearchScene } from '../Scenes/SearchScene';
+import * as google from '../data/google';
 
-module.exports = {
+describe('Google search', () => {
+	beforeEach ((browser) => {
+		console.log('Setting up...\n');
+		browser.window.maximize();
+	});
 
-    beforeEach: async (browser: NightwatchBrowser): Promise<void> => {
-        console.log('Setting up...');
-        await browser.maximizeWindow();
-    },
+	afterEach ((browser) => {
+		console.log('Closing down...\n');
+		browser.end();
+	});
 
-    afterEach: async (browser: NightwatchBrowser): Promise<void> => {
-        console.log('Closing down...');
-        await browser.end();
-    },
+	it('should type a text and click search', async () => {
+		const searchScene = new SearchScene(browser);
 
-    'Search test': async (browser: NightwatchBrowser): Promise<void> => {
+		await browser.url(google.url);
+		await searchScene.waitForSearchPage();
+		await searchScene.clickRejectAll();
+		await searchScene.typeInSearch(google.searchText);
+		await searchScene.clickSearch();
 
-        const searchScene = new SearchScene(browser);
-
-        await browser.maximizeWindow();
-        await browser.url('https://www.google.com');
-
-        await searchScene.waitForSearchPage();
-        await searchScene.typeInSearch('nightwatch');
-
-        // const result: any = await browser.getValue('input[name="email"]');
-        // console.log('Value', result.value);
-        const text = await searchScene.getTypedText();
-
-        // console.log('Value', await searchScene.getTypedText());
-        console.log('Value', text);
-
-        await browser.pause(2000); 
-        // await browser.end();
-    }
-};
+		await browser.verify.titleContains(google.searchText);
+	});
+});

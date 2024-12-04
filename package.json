@@ -4,10 +4,10 @@
     "description": "Nightwatch typescript testing with ts-node",
     "main": "index.js",
     "scripts": {
-        "test-all": "nightwatch -e chrome,firefox,edge -c ./nightwatch/nightwatch.conf.ts ./tests/Suites/**.e2e.ts",
-        "test-chrome": "nightwatch -e chrome -c ./nightwatch/nightwatch.conf.ts ./tests/Suites/**.e2e.ts",
-        "test-firefox": "nightwatch -e firefox -c ./nightwatch/nightwatch.conf.ts ./tests/Suites/**.e2e.ts",
-        "test-edge": "nightwatch -e edge -c ./nightwatch/nightwatch.conf.ts ./tests/Suites/**.e2e.ts"
+        "test-all": "nightwatch -e chrome,firefox,edge -c ./nightwatch/nightwatch.conf.ts ./e2e/tests/**.spec.ts",
+        "test-chrome": "nightwatch -e chrome -c ./nightwatch/nightwatch.conf.ts ./e2e/tests/**.spec.ts",
+        "test-firefox": "nightwatch -e firefox -c ./nightwatch/nightwatch.conf.ts ./e2e/tests/**.spec.ts",
+        "test-edge": "nightwatch -e edge -c ./nightwatch/nightwatch.conf.ts ./e2e/tests/**.spec.ts"
     },
     "author": "kmaets",
     "license": "ISC",
@@ -22,6 +22,7 @@
         "mochawesome": "^7.1.3",
         "nightwatch": "^3.9.0",
         "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
         "typescript": "^5.6.3"
     }
 }

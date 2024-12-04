@@ -13,7 +13,8 @@
 		"noEmit": true
 	},
 	"ts-node": {
-		"transpileOnly": true
+		"transpileOnly": true,
+		"require": ["tsconfig-paths/register"]
   	},
-  	"include": ["./"]
+  	"include": ["../e2e"]
 }

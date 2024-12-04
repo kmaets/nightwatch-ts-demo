@@ -12,7 +12,7 @@ export default [
                 ecmaVersion: 'latest'
             }
 		},
-		files: ['tests/**/*.ts'],
+		files: ['e2e/**/*.ts'],
 		ignores: ['build', 'node_modules'],
 		plugins: {
 			'@typescript-eslint': tsPlugin,

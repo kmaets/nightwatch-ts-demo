@@ -1,15 +1,10 @@
 module.exports = {
-    src_folders: ['tests'],
+    src_folders: ['e2e'],
 
     test_workers: {
-        enabled: true
+        enabled: true,
+		workers: 'auto',
     },
-
-    webdriver: {
-        start_process: true,
-    },
-
-    output_folder: 'tests_output',
 
     test_settings: {
         default: {
@@ -23,7 +18,7 @@ module.exports = {
 				on_failure: true,
 			},
 
-			/* test_runner: {
+			test_runner: {
 				type: 'mocha',
 				options: {
 					ui: 'bdd',
@@ -31,13 +26,16 @@ module.exports = {
 					reporter: 'mochawesome', // list, mochawesome
 					reporterOptions: {
 						reportDir: './tests_output',
-						// reportFilename: "[status]_[datetime]-[name]-report",
+						reportFilename: '[status]_[name]_[datetime]-report',
+                        timestamp: 'dd-mm-yy_HHMM',
+                        showHooks: 'always'
 					},
 				},
-			}, */
+			},
 		},
         chrome: {
             webdriver: {
+                start_process: true,
                 port: 9515,
                 cli_args: [
                     '--verbose'
@@ -60,6 +58,7 @@ module.exports = {
 
         firefox: {
             webdriver: {
+                start_process: true,
                 port: 4444,
                 cli_args: [
                     '--log',

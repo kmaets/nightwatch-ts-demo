@@ -16,7 +16,7 @@
                 "-c",
                 "./nightwatch/nightwatch.conf.ts",
                 "-t",
-                "./tests/Suites/Search.e2e.ts"
+                "./e2e/tests/login.spec.ts"
             ],
             "runtimeExecutable": null,
             "console": "integratedTerminal",
